@@ -26,15 +26,20 @@
   </head>
   <body>
     <div class="bigcontainer">
-      <!-- Header -->
+      <!-- Header / Navbar -->
       <header>
-        <nav>
-          <ul class="smnav">
-            <li class="logo">Zakaria</li>
-            <li><a href="#Home" class="texte">Home</a></li>
-            <li><a href="#Projects" class="texte">Projects</a></li>
-            <li><a href="#Contact" class="texte">Contact</a></li>
-          </ul>
+        <nav class="navbar">
+          <div class="nav-container">
+            <span class="logo">Zakaria</span>
+            <button class="menu-toggle" id="menu-toggle">
+              <i class="bi bi-list"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+              <li><a href="#Home" class="texte">Home</a></li>
+              <li><a href="#Projects" class="texte">Projects</a></li>
+              <li><a href="#Contact" class="texte">Contact</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
@@ -126,5 +131,15 @@
         </div>
       </footer>
     </div>
+
+    <!-- Toggle menu script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>
