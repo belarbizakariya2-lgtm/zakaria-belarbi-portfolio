@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zakaria Portfolio</title>
+    <title>Zakaria Belarbi | Portfolio</title>
     <meta
       name="description"
-      content="Welcome to Zakaria Belarbi's portfolio – Web designer and front-end developer."
+      content="Zakaria Belarbi - Front-end web developer portfolio showcasing web design projects and creative skills."
     />
 
     <!-- Google Fonts -->
@@ -28,7 +28,7 @@
     <div class="bigcontainer">
       <!-- Header / Navbar -->
       <header>
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
           <div class="nav-container">
             <span class="logo">Zakaria</span>
             <button class="menu-toggle" id="menu-toggle">
@@ -50,8 +50,8 @@
             <h1>Hello, my name is <span class="name">Zakaria</span></h1>
             <h3>I'm a web developer</h3>
             <p>
-              I’m 13 years old, from Morocco. This is my portfolio showcasing
-              my first web design projects and my passion for front-end
+              I’m 13 years old, from Morocco. This is my portfolio showcasing my
+              first web design projects and my passion for front-end
               development.
             </p>
             <a href="#Projects" class="mainbtn">View all my works</a>
@@ -85,6 +85,15 @@
               <img src="nina.PNG" alt="Sign-In Page" />
               <div class="project-info">
                 <strong class="Project-Title">Sign-Up Page</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="Capt2321312ure.PNG" alt="Photo Gallery" />
+              <div class="project-info">
+                <strong class="Project-Title">Photo Gallery</strong>
               </div>
             </div>
           </div>
@@ -132,13 +141,22 @@
       </footer>
     </div>
 
-    <!-- Toggle menu script -->
+    <!-- Toggle menu + Navbar Scroll Effect -->
     <script>
       const menuToggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
+      const navbar = document.getElementById("navbar");
 
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("show");
+      });
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
     </script>
   </body>
