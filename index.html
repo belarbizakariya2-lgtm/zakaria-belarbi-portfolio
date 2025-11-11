@@ -11,7 +11,7 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display&family=Cinzel&display=swap"
       rel="stylesheet"
     />
 
@@ -26,18 +26,19 @@
   </head>
   <body>
     <div class="bigcontainer">
-      <!-- Header / Navbar -->
+      <!-- Navbar -->
       <header>
         <nav class="navbar" id="navbar">
           <div class="nav-container">
-            <span class="logo">Zakaria</span>
+            <span class="logo">ZAKARIA</span>
             <button class="menu-toggle" id="menu-toggle">
               <i class="bi bi-list"></i>
             </button>
             <ul class="nav-links" id="nav-links">
-              <li><a href="#Home" class="texte">Home</a></li>
-              <li><a href="#Projects" class="texte">Projects</a></li>
-              <li><a href="#Contact" class="texte">Contact</a></li>
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#Projects">Projects</a></li>
+              <li><a href="#Aboutme">About me</a></li>
+              <li><a href="#Contact">Contact</a></li>
             </ul>
           </div>
         </nav>
@@ -47,7 +48,7 @@
       <section id="Home" class="section">
         <div class="texteandacc">
           <div class="text-content">
-            <h1>Hello, my name is <span class="name">Zakaria</span></h1>
+            <h1>Hello, my name is <span class="name">ZAKARIA</span></h1>
             <h3>I'm a web developer</h3>
             <p>
               I’m 13 years old, from Morocco. This is my portfolio showcasing my
@@ -56,11 +57,10 @@
             </p>
             <a href="#Projects" class="mainbtn">View all my works</a>
           </div>
-
           <div class="image-content">
             <img
               class="img"
-              src="ChatGPT Image 9 نوفمبر 2025، 12_27_28 م.png"
+              src="a3adi.png"
               alt="Zakaria Belarbi Portfolio Image"
             />
           </div>
@@ -68,7 +68,7 @@
       </section>
 
       <!-- Projects Section -->
-      <section id="Projects" class="projects">
+      <section id="Projects" class="projects section">
         <h2 class="title">Projects</h2>
         <div class="content">
           <div class="card">
@@ -79,7 +79,6 @@
               </div>
             </div>
           </div>
-
           <div class="card">
             <div class="img">
               <img src="nina.PNG" alt="Sign-In Page" />
@@ -88,7 +87,6 @@
               </div>
             </div>
           </div>
-
           <div class="card">
             <div class="img">
               <img src="Capt2321312ure.PNG" alt="Photo Gallery" />
@@ -100,8 +98,31 @@
         </div>
       </section>
 
+      <!-- About Me Section -->
+      <section id="Aboutme" class="Aboutme section">
+        <h2 class="title">About me</h2>
+        <div>
+          <p>
+            I am <span class="name">ZAKARIA BELARBI</span>, a front-end designer
+            and developer. I love <br />
+            turning ideas into beautiful interactive web experiences. I work on
+            <br />
+            designing simple and fast websites using HTML, CSS, and JavaScript,
+            <br />
+            with special attention to detail and smooth movement. I enjoy <br />
+            designing interfaces that make the user feel comfortable, and I love
+            <br />
+            combining beauty with function in every project I work on. I aspire
+            <br />
+            to develop my skills in the field of 2D game development and build
+            <br />
+            projects that combine art and programming. <br />
+          </p>
+        </div>
+      </section>
+
       <!-- Contact Section -->
-      <section id="Contact" class="card-contact">
+      <section id="Contact" class="card-contact section">
         <h2 class="title">Contact Me</h2>
         <div class="content">
           <div class="Contactcard">
@@ -111,7 +132,6 @@
               <p>+212 658650825</p>
             </div>
           </div>
-
           <div class="Contactcard">
             <div class="icons"><i class="bi bi-envelope-fill"></i></div>
             <div class="project-info">
@@ -127,37 +147,51 @@
         <div class="footer-content">
           <p>© 2025 Zakaria. All rights reserved.</p>
           <div class="social-icons">
-            <a href="https://github.com/yourusername" target="_blank"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://twitter.com/yourusername" target="_blank"
-              ><i class="bi bi-twitter"></i
-            ></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
           </div>
         </div>
       </footer>
+
+      <!-- Scroll To Top Button -->
+      <button id="toTop"><i class="bi bi-arrow-up"></i></button>
     </div>
 
-    <!-- Toggle menu + Navbar Scroll Effect -->
+    <!-- Scripts -->
     <script>
+      // Navbar toggle
       const menuToggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
       const navbar = document.getElementById("navbar");
-
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("show");
       });
 
+      // Scroll effects
+      const sections = document.querySelectorAll(".section");
+      const toTop = document.getElementById("toTop");
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+        // Navbar scroll effect
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+
+        // Scroll to top button
+        if (window.scrollY > 400) toTop.style.display = "block";
+        else toTop.style.display = "none";
+
+        // Fade-in sections
+        const triggerBottom = window.innerHeight * 0.85;
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < triggerBottom) section.classList.add("visible");
+        });
       });
+
+      // Scroll to top click
+      toTop.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
     </script>
   </body>
 </html>
