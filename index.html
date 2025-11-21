@@ -8,7 +8,10 @@
       name="description"
       content="Zakaria Belarbi - Front-end web developer portfolio showcasing web design projects and creative skills."
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display&family=Cinzel&display=swap"
@@ -39,6 +42,7 @@
               <li><a href="#Projects">Projects</a></li>
               <li><a href="#Aboutme">About me</a></li>
               <li><a href="#Contact">Contact</a></li>
+              <li><i class="fa fa-moon moon"></i></li>
             </ul>
           </div>
         </nav>
@@ -200,6 +204,27 @@
       toTop.addEventListener("click", () =>
         window.scrollTo({ top: 0, behavior: "smooth" })
       );
+      //*dark mood
+      // اختيار العناصر
+      const moon = document.querySelector(".moon");
+      const body = document.body;
+
+      // عند الضغط على الأيقونة
+      moon.addEventListener("click", () => {
+        // تبديل الـ Dark Mode
+        body.classList.toggle("dark-mode");
+
+        // تبديل الأيقونة بين قمر وشمس
+        if (body.classList.contains("dark-mode")) {
+          moon.classList.remove("fa-moon");
+          moon.classList.add("fa-sun");
+          moon.style.color = "yellow"; 
+        } else {
+          moon.classList.remove("fa-sun");
+          moon.classList.add("fa-moon");
+          moon.style.color = "black";
+        }
+      });
     </script>
   </body>
 </html>

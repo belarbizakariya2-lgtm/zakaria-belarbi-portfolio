@@ -365,3 +365,52 @@ footer .social-icons a:hover {
     font-size: 3rem;
   }
 }
+/* الوضع العادي */
+body {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+nav {
+  background-color: #f5f5f5;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+section {
+  background-color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode nav, footer {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.moon {
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transition: color 0.3s;
+}
+body.dark-mode p {
+  color: white;
+}
+body.dark-mode .card, .Contactcard {
+  background-color: #2a2a2a;
+  color: #e0e0e0;        
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
