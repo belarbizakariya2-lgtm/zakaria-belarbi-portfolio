@@ -365,52 +365,88 @@ footer .social-icons a:hover {
     font-size: 3rem;
   }
 }
-/* الوضع العادي */
-body {
-  background-color: white;
-  color: black;
-  transition: all 0.3s ease;
-}
+/* ===== Dark Mode Full Fix ===== */
 
-nav {
-  background-color: #f5f5f5;
-  color: black;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-section {
-  background-color: #ffffff;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dark Mode */
+/* Body */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-body.dark-mode nav, footer {
-  background-color: #1f1f1f;
-  color: #ffffff;
+/* Navbar */
+body.dark-mode .navbar {
+  background: #1f1f1f;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .nav-links li a {
+  color: #e0e0e0;
+}
+body.dark-mode .nav-links li a:hover {
+  background: #333;
+  color: #fff;
 }
 
+/* Sections */
 body.dark-mode section {
-  background-color: #1e1e1e;
+  background-color: #1a1a1a;
   color: #e0e0e0;
 }
 
-.moon {
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  transition: color 0.3s;
-}
+/* Paragraphs */
 body.dark-mode p {
-  color: white;
+  color: #e0e0e0;
 }
-body.dark-mode .card, .Contactcard {
-  background-color: #2a2a2a;
-  color: #e0e0e0;        
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+
+/* Project Cards */
+body.dark-mode .card {
+  background-color: #222;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.06);
+}
+body.dark-mode .card .img img {
+  opacity: 0.9;
+}
+
+/* Contact Cards */
+body.dark-mode .Contactcard {
+  background-color: #222;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.06);
+}
+body.dark-mode .icons {
+  color: #d8b57d;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+body.dark-mode footer .social-icons a {
+  color: #d8b57d;
+}
+body.dark-mode footer .social-icons a:hover {
+  color: #f0c98d;
+}
+
+/* Titles */
+body.dark-mode .title {
+  color: #d8b57d;
+}
+body.dark-mode .title::after {
+  background-color: #d8b57d;
+}
+body.dark-mode .name {
+  color: #d8b57d; 
+}
+
+body.dark-mode .Aboutme p {
+  color: #e0e0e0;
+}
+/* ===== Dark Mode About Me Fix ===== */
+body.dark-mode .Aboutme div {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
 }
