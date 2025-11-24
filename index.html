@@ -83,6 +83,7 @@
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="img">
               <img src="nina.PNG" alt="Sign-In Page" />
@@ -91,6 +92,7 @@
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="img">
               <img src="Capt2321312ure.PNG" alt="Photo Gallery" />
@@ -99,6 +101,18 @@
               </div>
             </div>
           </div>
+
+          <!-- ========= Modified Calculator Card ========= -->
+          <div class="card calc-card">
+            <div class="img">
+              <img src="calculator.PNG" alt="Photo calculator" />
+              <div class="project-info">
+                <strong class="Project-Title">calculator</strong>
+                <p class="calculatrtxt"><a class="calculatrtxt" href="#" onclick="openFiles()">Click For Try</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================ -->
         </div>
       </section>
 
@@ -158,13 +172,12 @@
         </div>
       </footer>
 
-      <!-- Scroll To Top Button -->
+      <!-- Scroll To Top -->
       <button id="toTop"><i class="bi bi-arrow-up"></i></button>
     </div>
 
     <!-- Scripts -->
     <script>
-      // Navbar toggle
       const menuToggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
       const navbar = document.getElementById("navbar");
@@ -173,26 +186,20 @@
         navLinks.classList.toggle("show");
       });
 
-      // Scroll effects
       const sections = document.querySelectorAll(".section");
       const toTop = document.getElementById("toTop");
 
-      // ========= Fix: show first section on load =========
       window.addEventListener("load", () => {
         sections[0].classList.add("visible");
       });
-      // ====================================================
 
       window.addEventListener("scroll", () => {
-        // Navbar scroll effect
         if (window.scrollY > 50) navbar.classList.add("scrolled");
         else navbar.classList.remove("scrolled");
 
-        // Scroll to top button
         if (window.scrollY > 400) toTop.style.display = "block";
         else toTop.style.display = "none";
 
-        // Fade-in sections
         const triggerBottom = window.innerHeight * 0.85;
         sections.forEach((section) => {
           const sectionTop = section.getBoundingClientRect().top;
@@ -200,31 +207,31 @@
         });
       });
 
-      // Scroll to top click
       toTop.addEventListener("click", () =>
         window.scrollTo({ top: 0, behavior: "smooth" })
       );
-      //*dark mood
-      // اختيار العناصر
+
       const moon = document.querySelector(".moon");
       const body = document.body;
 
-      // عند الضغط على الأيقونة
       moon.addEventListener("click", () => {
-        // تبديل الـ Dark Mode
         body.classList.toggle("dark-mode");
 
-        // تبديل الأيقونة بين قمر وشمس
         if (body.classList.contains("dark-mode")) {
           moon.classList.remove("fa-moon");
           moon.classList.add("fa-sun");
-          moon.style.color = "yellow"; 
+          moon.style.color = "yellow";
         } else {
           moon.classList.remove("fa-sun");
           moon.classList.add("fa-moon");
           moon.style.color = "black";
         }
       });
+
+      function openFiles() {
+        window.open("calculatore.html", "_blank");
+      }
     </script>
+    <script src="calculatore.js"></script>
   </body>
 </html>
